@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#168447">
+  <title>Annabella</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f8f3;
+      color: #183b29;
+    }
+    header {
+      background: #168447;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+      border-radius: 0 0 24px 24px;
+    }
+    .logo { font-size: 38px; font-weight: bold; }
+    header p { margin-bottom: 0; }
+    main { padding: 18px; max-width: 600px; margin: auto; }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 12px #153c2010;
+    }
+    h2 { margin-top: 0; color: #168447; }
+    .points { font-size: 34px; font-weight: bold; }
+    button {
+      background: #168447;
+      color: white;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .offer { border-left: 4px solid #168447; padding-left: 12px; margin: 16px 0; }
+    footer { text-align: center; color: #587260; padding: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Annabella 💚</div>
+    <p>Mai aproape de cumpărăturile tale</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Cardul meu</h2>
+      <p>Puncte demonstrative</p>
+      <div class="points" id="points">120 puncte</div>
+      <button onclick="addPoints()">Adaugă puncte de test</button>
+      <p id="message" aria-live="polite"></p>
+    </section>
+    <section class="card">
+      <h2>Oferte pentru tine</h2>
+      <div class="offer">
+        <strong>🥦 Oferte la legume și fructe</strong>
+        <p>Descoperă ofertele disponibile în magazin.</p>
+      </div>
+      <div class="offer">
+        <strong>🥛 Produse pentru fiecare zi</strong>
+        <p>Verifică promoțiile înainte de cumpărături.</p>
+      </div>
+      <div class="offer">
+        <strong>🛒 Cumpărături mai ușoare</strong>
+        <p>Păstrează ofertele preferate la îndemână.</p>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Cupon demonstrativ</h2>
+      <p>Cupon de test — nu este valabil la casă.</p>
+      <button onclick="document.getElementById('coupon').textContent='CUPON TEST — ANNABELLA'">
+        Arată cuponul
+      </button>
+      <p id="coupon"></p>
+    </section>
+  </main>
+  <footer>Prototip demonstrativ Annabella</footer>
+  <script>
+    let points = 120;
+    function addPoints() {
+      points += 10;
+      document.getElementById('points').textContent = points + ' puncte';
+      document.getElementById('message').textContent =
+        'Ai adăugat 10 puncte de test pe acest dispozitiv.';
+    }
+  </script>
+</body>
+</html>
